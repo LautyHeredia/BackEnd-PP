@@ -3,7 +3,7 @@ const Movies = require('../databaseModel/moviesModel/moviesModel')
 const refreshMoviesHandler = require('../handlers/moviesHandler')
 const searchMoviesHandler = require('../handlers/moviesHandler')
 
-const movieRoutes = Router()
+const emovieRoutes = Router()
 
 movieRoutes.get('/', async (req, res) => {
  const {search} = req.query;
