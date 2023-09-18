@@ -32,7 +32,7 @@ const changedMovies = async (req, res) => {
         res.status(403).json(`Debe ingresar el Email y Password mod para authenticar el acceso`)
       }
      }catch(err){    
-        res.status(500).json(err)
+        res.status(500).json({error: err.message})
      }
 }
 
@@ -50,7 +50,7 @@ const deleteMovieInDb = async (req, res) => {
             res.status(401).json(`No tiene acceso aqui, lo sentimos`)
           }
         }catch(err){
-          res.status(500).json(err)      
+          res.status(500).json({error: err.message})      
         }
     }else{
         res.status(403).json(`No has ingresado ningun nombre de Pelicula a eliminar o Email y Password para authenticar el acceso`)
@@ -72,7 +72,7 @@ const searchMovie = async ({search}) => {
       
           return matchingMovies;
     }catch(err){
-        res.status(500).json(err)
+        res.status(500).json({error: err.message})
     }
 }
 

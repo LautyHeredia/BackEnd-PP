@@ -3,7 +3,7 @@ const Movies = require('../databaseModel/moviesModel/moviesModel')
 const refreshMoviesHandler = require('../handlers/moviesHandler')
 const searchMoviesHandler = require('../handlers/moviesHandler')
 
-const emovieRoutes = Router()
+const movieRoutes = Router()
 
 movieRoutes.get('/', async (req, res) => {
  const {search} = req.query;
@@ -17,7 +17,7 @@ movieRoutes.get('/', async (req, res) => {
         res.status(200).json(moviesAll)
     }
  }catch(err){
-    throw new Error(err)
+    res.status(500).json({error: err.message})
  }
 })
 

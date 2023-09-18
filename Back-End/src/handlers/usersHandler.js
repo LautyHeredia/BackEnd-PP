@@ -25,7 +25,7 @@ const createUser = async (req, res) => {
             res.status(401).json(`No tiene acceso aqui, lo sentimos`)
           }  
         }catch(err){
-            res.status(500).json(err)
+            res.status(500).json({error: err.message})
         }
     }else{
         res.status(403).json(`Falta ingresar datos requeridos obligatoriamente`)
@@ -48,7 +48,7 @@ const putUser = async (req, res) => {
              res.status(401).json(`No tiene acceso aqui, lo sentimos`)
            } 
         }catch(err){
-            res.status(500).json(err)
+            res.status(500).json({error: err.message})
         }
     }else{
         res.sttatus(402).json(`Debe ingresar al menos un campo para poder modificar el Usuario`)
@@ -69,7 +69,7 @@ const deleteUser = async (req, res) => {
           res.status(401).json(`No tiene acceso aqui, lo sentimos`)  
         }
     }catch(err){
-        res.status(500).json(err)
+        res.status(500).json({error: err.message})
     }
   }else{
     res.status(402).json(`Debe ingresar el id correcto del user a eliminar`)

@@ -55,7 +55,7 @@ const deleteMod = async (req, res) => {
       res.status(500).json(`Debe ingresar Email y Password para authenticar (query) y a su ves Email (body) a eliminar`)
     }
   }catch(err){
-    res.status(500).json(err)
+    res.status(500).json({error: err.message})
   }
 }
 
@@ -76,7 +76,7 @@ const putModHandler = async (req, res) => {
     res.status(500).json(`Debe ingresar Email y Password para authenticar (query) y a su ves Email, Password y UserName (body) para modificar`)
   }
   }catch(err){
-    res.status(500).json(err)
+    res.status(500).json({error: err.message})
   }
 }
 
