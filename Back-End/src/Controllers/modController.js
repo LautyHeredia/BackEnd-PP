@@ -15,7 +15,7 @@ const createModDB = async ({Email, Password, UserName}) => {
         return `Ya existe el usuario con email: ${Email}`
       }
    }catch(err){
-    throw new Error(err)
+    res.status(500).json({error: err.message})
    } 
 }
 
