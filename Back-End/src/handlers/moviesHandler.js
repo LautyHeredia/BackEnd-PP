@@ -16,7 +16,7 @@ const changedMovies = async (req, res) => {
            for(let i=1; i<=totalPages; i++){
              const response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${USER_API}`)
                  if(!response.ok){
-                  throw new Error(`Ha ocurrido un error en la peticion HTTPS`)
+                  res.status(500).json(`Ha ocurrido un error en la peticion HTTPS`)
                  }
     
                  const data = await response.json()

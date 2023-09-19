@@ -1,8 +1,8 @@
+require('dotenv')
 const functionMiddleware = require('../middlewareAuth/middlewareAuth')
 const ModelMod = require('../databaseModel/MyModelMOD/myModelMod')
 const modController = require('../Controllers/modController')
 const USER_MOD = process.env.USER_MOD;
-const USER_MOD_PASSWORD = process.env.USER_MOD_PASSWORD;
 
 const getMod = async (req, res) => {
   const {Email, Password} = req.query;
