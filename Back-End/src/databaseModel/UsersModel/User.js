@@ -12,7 +12,7 @@ const User = new Schema (
         ],
         password: {
             type: String,
-            required: false,
+            required: true,
         },
         email: {type: String, uniquee: true, required: true},
         status: {type: Boolean, default: false, required: false},
